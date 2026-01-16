@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bobby OUFC Shop</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4}
+header{background:#ffcc00;border-bottom:5px solid #000;text-align:center;padding:20px}
+nav{background:#000;color:#ffcc00;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:12px;position:sticky;top:0}
+nav a{color:#ffcc00;text-decoration:none;font-weight:bold}
+nav a:hover{text-decoration:underline}
+.basket{background:#ffcc00;color:#000;padding:6px 12px;border-radius:20px;font-weight:bold;cursor:pointer}
+.container{max-width:1100px;margin:auto;padding:20px}
+.shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.kit{background:#fff;border-radius:8px;padding:15px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,.15);transition:.3s}
+.kit:hover{transform:translateY(-6px)}
+.kit img{width:100%}
+select,button,input{width:100%;padding:8px;margin-top:8px}
+button{background:#000;color:#ffcc00;border:none;font-weight:bold;border-radius:6px;cursor:pointer}
+.checkout{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+@media(max-width:700px){nav{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div style="background:url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Kassam_Stadium.jpg') center/cover no-repeat;padding:60px 20px;">
+    <h1 style="background:rgba(255,204,0,0.9);display:inline-block;padding:15px;border-radius:10px;">Bobby OUFC Official‑Style Fan Shop</h1></h1></div>
+</header>
+<nav>
+<a href="#home">Home</a>
+<a href="#players">Players</a>
+<a href="#legends">Legends</a>
+<a href="#videos">Videos</a>
+<a href="#history">History</a>
+<a href="#facts">Facts</a>
+<a href="#gallery">Pictures</a>
+<a href="#kits">Kits</a>
+<a href="#gk">Goalkeeper</a>
+<a href="#retro">Retro</a>
+<a href="#merch">Merch</a>
+<span class="basket" onclick="openBasket()">🛒 Basket (<span id="count">0</span>)</span>
+</nav>
+<div class="container" id="home">
+
+<h2 id="players">Current Players</h2>
+<div class="shop">
+  <div class="kit"><h3>Cameron Brannagan</h3><p>Midfielder • Captain</p></div>
+  <div class="kit"><h3>Mark Harris</h3><p>Forward</p></div>
+  <div class="kit"><h3>Josh Murphy</h3><p>Winger</p></div>
+</div>
+
+<h2 id="legends">OUFC Legends</h2>
+<div class="shop">
+  <div class="kit"><h3>John Aldridge</h3><p>League Cup Winner 1986</p></div>
+  <div class="kit"><h3>Ray Houghton</h3><p>1980s Hero</p></div>
+</div>
+
+<h2 id="videos">Match Highlights</h2>
+<div class="shop">
+  <div class="kit"><iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="OUFC Highlights" allowfullscreen></iframe><p>Classic Highlights</p></div>
+</div>
+
+
+<h2 id="history">Oxford United History</h2>
+<p>Oxford United Football Club was founded in 1893 as Headington United. The club changed its name to Oxford United in 1960 and quickly rose through the Football League. The most successful period in the club’s history came in the 1980s, when Oxford United won the League Cup in 1986 and played in the First Division (now the Premier League). The club is known for its strong community support and loyal fans.</p>
+
+<h2 id="facts">Oxford United Facts</h2>
+<ul>
+  <li>Founded in 1893</li>
+  <li>Nicknamed: The U’s</li>
+  <li>Club colours: Yellow and Blue</li>
+  <li>Home stadium: Kassam Stadium</li>
+  <li>Biggest trophy: League Cup (1986)</li>
+  <li>Former name: Headington United</li>
+</ul>
+
+<h2 id="gallery">Oxford United Pictures</h2>
+<div class="shop">
+  <div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Kassam_Stadium.jpg"><p>Kassam Stadium</p></div>
+  <div class="kit"><img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Oxford_United_FC_logo.svg"><p>Club Badge</p></div>
+  <div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Oxford_United_match.jpg"><p>Matchday Action</p></div>
+</div>
+
+
+<h2 id="kits">Current Kits</h2>
+<div class="shop">
+<div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Football_shirt_yellow.svg"><h3>Home Kit</h3><p>£55</p><select id="s1"><option value="">Size</option><option>YS</option><option>YM</option><option>S</option><option>M</option><option>L</option></select><button onclick="add('Home Kit',55,'s1')">Add</button></div>
+<div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Football_shirt_blue.svg"><h3>Away Kit</h3><p>£50</p><select id="s2"><option value="">Size</option><option>YS</option><option>YM</option><option>S</option><option>M</option><option>L</option></select><button onclick="add('Away Kit',50,'s2')">Add</button></div>
+</div>
+
+<h2 id="gk">Goalkeeper Kits</h2>
+<div class="shop">
+<div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Football_shirt_green.svg"><h3>GK Kit</h3><p>£60</p><select id="s3"><option value="">Size</option><option>YS</option><option>YM</option><option>S</option><option>M</option><option>L</option></select><button onclick="add('GK Kit',60,'s3')">Add</button></div>
+</div>
+
+<h2 id="retro">Retro Kits</h2>
+<div class="shop">
+<div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Football_shirt_yellow.svg"><h3>1986 League Cup</h3><p>£60</p><select id="s4"><option value="">Size</option><option>S</option><option>M</option><option>L</option></select><button onclick="add('1986 Retro',60,'s4')">Add</button></div>
+</div>
+
+<h2 id="merch">Merch</h2>
+<div class="shop">
+<div class="kit"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Scarf_icon.svg"><h3>Scarf</h3><p>£15</p><select id="s5"><option>One Size</option></select><button onclick="add('Scarf',15,'s5')">Add</button></div>
+</div>
+
+<h2>Basket</h2>
+<div class="checkout" id="basket"></div>
+
+</div>
+<script>
+let items=[];
+function add(name,price,sizeId){let s=document.getElementById(sizeId).value;if(!s){alert('Select size');return;}items.push(name+' ('+s+') - £'+price);document.getElementById('count').innerText=items.length;render();}
+function render(){document.getElementById('basket').innerHTML=items.map((i,n)=>'<p>'+i+' <button onclick="remove('+n+')">Remove</button></p>').join('')||'Basket empty';}
+function remove(i){items.splice(i,1);document.getElementById('count').innerText=items.length;render();}
+function openBasket(){document.getElementById('basket').scrollIntoView({behavior:'smooth'});}
+</script>
+</body>
+</html>
